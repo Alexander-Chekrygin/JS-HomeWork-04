@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: green;
+            display: block;
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+<script>
+    let myDivs = document.querySelectorAll('div');
+    let first = Math.floor(Math.random() * 255)
+    let second = Math.floor(Math.random() * 255)
+    let third = Math.floor(Math.random() * 255)
+    newColor = `rgb(${first}, ${second}, ${third})`
+    console.log(newColor);
+    setInterval(() => {
+   first = Math.floor(Math.random() * 255)
+    }, 100);
+setInterval(() => {
+   second = Math.floor(Math.random() * 255)
+    }, 100);
+setInterval(() => {
+   third = Math.floor(Math.random() * 255)
+    }, 100);
+setInterval(() => {
+   third = Math.floor(Math.random() * 255)
+    }, 100);
+setInterval(() => {
+    newColor = `rgb(${first}, ${second}, ${third})`
+    }, 100);
+    
+    
+    let divArr = []
+   function toArray(){
+   for(let i = 0;i < myDivs.length;i++){
+       divArr.push(myDivs[i]);
+   }
+   console.log(divArr);
+   }
+ toArray()
+ for(let i = 0;i < divArr.length;i++){
+     divArr[i].addEventListener('mouseover',function changeColor(){
+         this.style.backgroundColor = newColor;
+         this.innerHTML = newColor
+         
+     })
+ }
+</script>
+</html>
